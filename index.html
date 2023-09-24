@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Страница #100</title>
-        <link rel="icon" type="image/png" href = "favicon.png">
+        <link rel="icon" type="image/svg+xml" href = "logo.svg">
         <link rel="stylesheet" href = "style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,14 +12,26 @@
     <body>
         <header>
             <nav>
-                <img src = "logo.svg" height="100%" style="padding: 0 0 0 10px;">
-                <ul type = "none">
-                    <li><a href = "#starter">В начало</a></li>
-                    <li><a href = "#finisher">В конец</a></li>
-                    <li><a href = "https://www.culture.ru/poems/5828/k-ya-pomnyu-chudnoe-mgnovene">Источник стихотворения</a></li>
-                </ul>
+                <div class="logo">
+                    <span><i>Furr</i>niture</span>
+                    <img src = "logo.svg" height="100%" style="padding: 0 0 0 10px;">
+                </div>
+                <h1 id = "starter">Магазин самой мягкой мебели</h1> 
+                <div>
+                    <a href="NOT READY">
+                        <figure>
+                            <img src="images/heart.svg">
+                            <figcaption>Избранное</figcaption>
+                        </figure>
+                    </a>
+                    <a href="NOT READY"> 
+                        <figure>
+                            <img src="images/cart.svg">
+                            <figcaption>Корзина</figcaption>
+                        </figure>
+                    </a>
+                </div>
             </nav>
-            <h1 id = "starter">Добро пожаловать</h1>
         </header>
         <article>
             <div>
@@ -39,44 +51,25 @@
             </aside>
         </article>
         <main>
-            <h3>Тут будет переход на каталог, но пока - стихотворение:</h3>
-            <pre>
-<b>Я помню чудное мгновенье:</b>
-<strong>Передо мной явилась ты,</strong>
-<i>Как мимолетное виденье,</i>
-<em>Как гений чистой красоты.</em>
-<u>В томленьях грусти безнадежной,</u>
-<sub>В тревогах шумной суеты,</sub>
-<cite>Звучал мне долго голос нежный</cite>
-<blockquote>И снились милые черты.</blockquote>
-<abbr>Шли годы. Бурь порыв мятежный</abbr>
-<sup>Рассеял прежние мечты,</sup>
-И я забыл твой голос нежный,
-Твои небесные черты.
-В глуши, во мраке заточенья
-Тянулись тихо дни мои
-Без божества, без вдохновенья,
-Без слез, без жизни, без любви.
-Душе настало пробужденье:
-И вот опять явилась ты,
-Как мимолетное виденье,
-Как гений чистой красоты.
-И сердце бьется в упоенье,
-И для него воскресли вновь
-И божество, и вдохновенье,
-И жизнь, и слезы, и любовь.
-            </pre>
-        
-        <ol type = "a", start="6">Список интересного
-            <li><a href = "https://www.culture.ru/poems/5828/k-ya-pomnyu-chudnoe-mgnovene">Источник стихотворения</a></li>
-            <li><a href = "#starter">В начало</a></li>
-            <li><a href = "#finisher">В конец</a></li>
-            <ul type="sqare">
-                <li>Я - часть вложенного списка</li>
-                <li>И я</li>
-            </ul>
-        </ol>
+            <h1>Хит продаж</h1>
+            <div class="sofas">
+                <img src="images/sofa1.jpg">
+                <img src="images/sofa2.jpg">
+                <img src="images/sofa3.jpg">
+                <img src="images/sofa4.jpg">
+            </div>
+        <a href = "https://yandex.ru/company/"><img src = "https://avatars.mds.yandex.net/get-bunker/135516/4e7fffeed58338070b00ce9d0ef9eab69489c6a6/orig" height="100" width="200" style="border: 1px solid black; float: left;"></a>
+        <p>CSS-свойство float используется для позиционирования элементов слева и справа
+            от его контейнера, а также позволяет обтекать его текстом и встроенными элементами.
+            Самое простое использование float — это обтекание изображения текстом.
+            Обратите внимание, что в HTML-коде элемент (текст), который обтекает плавающий
+            элемент (изображение), всегда находится после плавающего элемента.
+            Свойство float определяет поток содержимого на странице. Остальные элементы
+            будут частью потока, если элемент будет удален из обычного потока содержимого. Это
+            свойство игнорируется абсолютно позиционированными элементами. Он может быть
+            записан в файле CSS или может быть указан непосредственно в стиле элемента.</p>
         <h3>А теперь важные термины</h3>
+        <img src = "http://bigkarta.ru/img/1big.jpg" width="300" style="border: 1px solid black; float: right; position: sticky; bottom: 5px;">
         <dl>
             <dt>Чайник</dt>
             <dd><i>Сосуд с ручкой и носиком для кипячения воды или заварки чая.</i></dd>
@@ -98,13 +91,6 @@
             <dd>Правило (алгоритм) сопоставления каждому конкретному сообщению строго определённой комбинации символов (знаков) (или сигналов).</dd>
             <dd>Последовательность букв и цифр, подтверждающая выполнение задания.</dd>
         </dl>
-        <a href = "https://yandex.ru/company/"><img src = "https://avatars.mds.yandex.net/get-bunker/135516/4e7fffeed58338070b00ce9d0ef9eab69489c6a6/orig" height="100" width="200"></a>
-        <img src = "http://bigkarta.ru/img/1big.jpg" alt = "не грузится :(" width="700" usemap="#themap" style="z-index: 0; border: 1px solid black;">
-        <map name = "themap">
-            <area shape = "polygon" coords = "200, 200, 200, 500, 500, 200" href = "https://yandex.ru/company/">
-            <area shape = "circle" coords = "0,0,50" href = "https://yandex.ru/company/">
-            <area shape = "rectangle" coords = "0, 300, 100, 250" href = "https://yandex.ru/company/">
-        </map>
     </main>
     <footer>
         Сайт разработал Ермаков К.Р. из группы ИКБО-16-22
