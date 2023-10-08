@@ -12,12 +12,38 @@
     <body>
         <header>
             <nav>
-                <div class="logo">
+                <div id="logo">
                     <span><i>Furr</i>niture</span>
                     <img src = "logo.svg" height="100%" style="padding: 0 0 0 10px;">
                 </div>
-                <h1 id = "starter">Магазин самой мягкой мебели</h1> 
-                <div>
+                <div id="nmiddle">
+                    <input type="checkbox" id="menutoggle">
+                    <label for="menutoggle" id="menubtn">
+                        <div id="burger">
+                            <div class="stick"></div>
+                            <div class="stick"></div>
+                            <div class="stick"></div>
+                            <div class="stick"></div>
+                        </div><span>Каталог</span>
+                    </label>
+                    <div id = "menu">
+                        <div>
+                            <ul>
+                                <li>Кресла</li>
+                                <li>Диваны</li>
+                                <li>Кровати и матрасы</li>
+                                <li>Стулья</li>
+                                <li>Мягкие игрушки</li>
+                            </ul>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <input type="text">
+                        <img src="images/search.svg">
+                    </div>
+                </div>
+                <div id = "links">
                     <a href="NOT READY">
                         <figure>
                             <img src="images/heart.svg">
@@ -32,24 +58,22 @@
                     </a>
                 </div>
             </nav>
-        </header>
-        <article>
-            <div>
-                <h3>О нас:</h3>
-                    <section>
-                        <p>Это первый текст на данной странице, находящийся в теге p<br>
-                        Тут будет содержаться информация о магазине</p>
-                    </section>
-                <h3>О ценах на продукцию:</h3>
-                    <section>
-                        <p>Здесь будет содержаться информация о мебели</p>
-                    </section>
+            <div class="imgrow">
+                <img src = "images/gall1.jpg">
+                <img src = "images/gall2.jpg">
+                <img src = "images/gall3.jpg">
+                <img src = "images/gall4.jpg">
+                <img src = "images/gall5.jpg">
+                <img src = "images/gall6.jpg">
             </div>
-            <aside>Боковая панель<br>
-                   может содержать<br>
-                   дополнительные ссылки
-            </aside>
-        </article>
+            <div class="imgrow">
+                <img src = "images/gall7.jpg">
+                <img src = "images/gall8.jpg">
+                <img src = "images/gall9.jpg">
+                <img src = "images/gall10.jpg">
+                <img src = "images/gall11.jpg">
+            </div>
+        </header>
         <main>
             <h1>Хит продаж</h1>
             <div class="sofas">
@@ -69,7 +93,6 @@
             свойство игнорируется абсолютно позиционированными элементами. Он может быть
             записан в файле CSS или может быть указан непосредственно в стиле элемента.</p>
         <h3>А теперь важные термины</h3>
-        <img src = "http://bigkarta.ru/img/1big.jpg" width="300" style="border: 1px solid black; float: right; position: sticky; bottom: 5px;">
         <dl>
             <dt>Чайник</dt>
             <dd><i>Сосуд с ручкой и носиком для кипячения воды или заварки чая.</i></dd>
@@ -103,4 +126,3 @@
     </body>
 
     </html>
-
