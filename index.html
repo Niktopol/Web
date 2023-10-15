@@ -14,7 +14,7 @@
             <nav>
                 <div id="logo">
                     <span><i>Furr</i>niture</span>
-                    <img src = "logo.svg" height="100%" style="padding: 0 0 0 10px;">
+                    <img src = "logo.svg">
                 </div>
                 <div id="nmiddle">
                     <input type="checkbox" id="menutoggle">
@@ -58,29 +58,30 @@
                     </a>
                 </div>
             </nav>
-            <div class="imgrow">
-                <img src = "images/gall1.jpg">
-                <img src = "images/gall2.jpg">
-                <img src = "images/gall3.jpg">
-                <img src = "images/gall4.jpg">
-                <img src = "images/gall5.jpg">
-                <img src = "images/gall6.jpg">
-            </div>
-            <div class="imgrow">
-                <img src = "images/gall7.jpg">
-                <img src = "images/gall8.jpg">
-                <img src = "images/gall9.jpg">
-                <img src = "images/gall10.jpg">
-                <img src = "images/gall11.jpg">
-            </div>
+            <video src="images/abient.mp4" type="video/mp4" autoplay muted loop>
         </header>
+        <div id = "notifications">
+            <div><img src = "images/bell.svg"></div>
+            <div>
+                <ol>
+                    <li>Notification one</li>
+                    <li>Notification two</li>
+                    <li>Notification three</li>
+                </ol>
+            </div>
+        </div>
         <main>
             <h1>Хит продаж</h1>
-            <div class="sofas">
-                <img src="images/sofa1.jpg">
-                <img src="images/sofa2.jpg">
-                <img src="images/sofa3.jpg">
-                <img src="images/sofa4.jpg">
+            <div id="buttoncont">
+                <button id = "b1" onclick="setbg('gall2.jpg')">Вариант №1</button>
+                <button id = "b2" onclick="setbg('gall3.jpg')">Вариант №2</button>
+                <button id = "b3" onclick="setbg('gall5.jpg')">Вариант №3</button>
+                <button id = "b4" onclick="setbg('gall11.jpg')">Вариант №4</button>
+            </div>
+            <div id="cards">
+                <div class="cardimg"><img src="images/sofa1.jpg"></div>
+                <div class="cardimg"><img src="images/sofa2.jpg"></div>
+                <div class="cardimg"><img src="images/sofa3.jpg"></div>
             </div>
         <a href = "https://yandex.ru/company/"><img src = "https://avatars.mds.yandex.net/get-bunker/135516/4e7fffeed58338070b00ce9d0ef9eab69489c6a6/orig" height="100" width="200" style="border: 1px solid black; float: left;"></a>
         <p>CSS-свойство float используется для позиционирования элементов слева и справа
@@ -123,6 +124,7 @@
             <a href = "tel:89999999999">89999999999</a>
         </address>
     </footer>
+    <script src="javascript.js"></script>
     </body>
 
     </html>
