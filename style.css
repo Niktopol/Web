@@ -142,6 +142,7 @@ nav{
         grid-area: links;
         & figure{
             display: flex;
+            position: relative;
             justify-content: center;
             flex-direction: column;
             font-size: 15px;
@@ -151,6 +152,15 @@ nav{
             color: black;
             & img{
                 height: 24px;
+            }
+            #counter{
+                position: absolute;
+                top: 0;
+                left: calc(50% + 8px);
+                padding: 1px 0.5em;
+                font-size: 10px;
+                background-color: orange;
+                border-radius: 10px;
             }
         }
         & figcaption{
@@ -486,6 +496,48 @@ main{
         }
     }
 }
+#coverdrawer{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+    display: none;
+    & > span{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #00000056;
+        backdrop-filter: blur(3px);
+    }
+    & canvas{
+        z-index: 7;
+        width: 80%;
+        height: 80%;
+        border-radius: 20px;
+        image-rendering: pixelated;
+    }
+    & > div{
+        display: flex;
+        z-index: 7;
+        width: 80%;
+        gap: 1em;
+        & button{
+            font-size: 18px;
+            width: 8em;
+            background-color: orange;
+            border: 0;
+            border-radius: 20px;
+            padding: 0.5em;
+        }
+    }
+}
 #blurcards{
     grid-area: cards;
     grid-column: span 2;
@@ -680,12 +732,44 @@ main{
             height: 50%;
             object-fit: cover;
         }
-        & button{
-            background-color: orange;
-            border-radius: 20px;
-            padding: 0.5em 1em;
-            cursor: pointer;
-            border: none;
+        & figcaption{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            column-gap: 0.5em;
+            & h1, p{
+                display: block;
+                width: 100%;
+            }
+            & button{
+                display: block;
+                background-color: orange;
+                border-radius: 20px;
+                padding: 0.5em 1em;
+                cursor: pointer;
+                border: none;
+                height: 2.5em;
+                width: max-content;
+            }
+            & .likebutton{
+                padding: 0.5em 0.5em;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 2.5em;
+                height: 2.5em;
+                & svg{
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    width: 1.5em;
+                    height: 1.5em;
+                }
+                & svg:first-child{
+                    display: none;
+                }
+            }
         }
     }
 }
