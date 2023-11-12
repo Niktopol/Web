@@ -15,6 +15,35 @@ const ctx = canvas.getContext("2d");
 ctx.fillStyle = "white";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+//NEW-----------------
+function truncate(str, maxLength){
+    if (str.length > maxLength) {
+        return str.substr(0, maxLength - 1) + "…";
+    }
+    return str;
+}
+
+function Accumulator(startingValue) {
+    this.value = startingValue ?? 0;
+    this.read =  function () {
+        const newValue = +prompt("Введите сумму товара", '0');
+        this.value += newValue;
+        alert(`Текущая сумма товаров: ${this.value}`)
+    }
+};
+let accumulator;
+window.onload = function(){
+    accumulator = new Accumulator(0);
+    document.querySelectorAll(".blcard p").forEach(element => {
+        element.innerText = truncate(element.innerText, 40);
+    });
+};
+document.querySelectorAll(".cart_btn").forEach(element => {
+    element.addEventListener('click', function(event) {
+        accumulator.read();
+    });
+});
+//---------------
 function toggleordform(){
     fflag = !fflag;
     if (fflag){
