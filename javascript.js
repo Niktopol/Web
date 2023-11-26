@@ -196,12 +196,54 @@ function filter(arr, a, b){
     }
     return res;
 }
-
-window.onload = function (e){
+let notifCount = 0;
+let counter = document.querySelector("#notifications span");
+let notifs = document.querySelector("#notifications").lastElementChild;
+let interval;
+let timeout;
+function intervalNotif(){
+    notifCount += 1;
+    let notif = document.createElement("div");
+    notif.className = "notification";
+    notif.textContent = "Уведомление №"+notifCount;
+    notifs.appendChild(notif);
+    counter.textContent = notifCount <= 99 ? notifCount : "99+";
+}
+document.querySelector("#notifications img").addEventListener("click",function(){
+    clearInterval(interval);
+    clearTimeout(timeout);
+    timeout = setTimeout(function(){interval = setInterval(intervalNotif, 3000);}, 10000);
+});
+document.querySelector("#notifications button").addEventListener("click",function(){
+    notifCount += 1;
+    let value = prompt() ?? "New notification";
+    let notif = document.createElement("div");
+    notif.className = "notification";
+    notif.textContent = value;
+    notifs.appendChild(notif);
+    counter.textContent = notifCount <= 99 ? notifCount : "99+";
+    setTimeout(function(){
+        notifCount -= 1;
+        notifs.removeChild(notif);
+        counter.textContent = notifCount <= 99 ? notifCount : "99+";
+    }, 1500);
+});
+window.onload = function (){
     genPopularGoods();
-    let arr = [5,13,54,65,4,3213,21,3,21,321,2,31,2,54,64,8954,4];
-    console.log(arr);
-    console.log(filter(arr, 6, 50))
+    counter.textContent = notifCount;
+    interval = setInterval(intervalNotif, 3000);
+    let ul = document.getElementById("user_list");
+    while(true){
+        let val = (prompt() ?? "").trim();
+        if(val){
+            let li = document.createElement("li");
+            li.textContent = val;
+            ul.appendChild(li);
+        }
+        else{
+            break;
+        }
+    }
 };
 
 
