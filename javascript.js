@@ -199,6 +199,8 @@ function filter(arr, a, b){
 let notifCount = 0;
 let counter = document.querySelector("#notifications span");
 let notifs = document.querySelector("#notifications").lastElementChild;
+let cards = document.querySelector("#blurcards");
+let pageHeight;
 let interval;
 let timeout;
 function intervalNotif(){
@@ -206,6 +208,7 @@ function intervalNotif(){
     let notif = document.createElement("div");
     notif.className = "notification";
     notif.textContent = "Уведомление №"+notifCount;
+    notif.appendChild(document.createElement("div"));
     notifs.appendChild(notif);
     counter.textContent = notifCount <= 99 ? notifCount : "99+";
 }
@@ -228,59 +231,33 @@ document.querySelector("#notifications button").addEventListener("click",functio
         counter.textContent = notifCount <= 99 ? notifCount : "99+";
     }, 1500);
 });
+window.addEventListener("scroll", function(event){
+    //(document.documentElement.clientHeight/2)/      + cards.offsetHeight/2)
+    cards.querySelectorAll("& > .blcard").forEach(function(elem){
+        elem.style.opacity = (window.scrollY + cards.offsetHeight/2)/(cards.getBoundingClientRect().y + window.scrollY);
+    });
+    popular.style.opacity = (window.scrollY)/(popular.getBoundingClientRect().y + window.scrollY)
+    this.document.getElementById("vidwrapper").lastElementChild.style.objectPosition = `center ${(window.scrollY/pageHeight) * -1500}px`;
+});
 window.onload = function (){
     genPopularGoods();
     counter.textContent = notifCount;
-    interval = setInterval(intervalNotif, 3000);
-    let ul = document.getElementById("user_list");
-    while(true){
-        let val = (prompt() ?? "").trim();
-        if(val){
-            let li = document.createElement("li");
-            li.textContent = val;
-            ul.appendChild(li);
+    pageHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
+    notifs.addEventListener("click", function(event){
+        if(event.target.parentNode.className == "notification" && event.target.tagName == "DIV"){
+            notifs.removeChild(event.target.parentNode);
+            notifCount -= 1;
+            counter.textContent = notifCount <= 99 ? notifCount : "99+";
         }
-        else{
-            break;
-        }
-    }
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-document.querySelectorAll(".cart_btn").forEach(element => {
-    element.addEventListener('click', function(event) {
-        
     });
-});*/
+    interval = setInterval(intervalNotif, 3000);
+    let positioned = document.getElementById("positioned");
+    positioned.addEventListener("click", function(e){
+        positioned.firstElementChild.style.left = `${(positioned.clientWidth / 2) - (positioned.firstElementChild.offsetWidth / 2)}px`;
+        positioned.firstElementChild.style.top = `${(positioned.clientHeight / 2) - (positioned.firstElementChild.offsetHeight / 2)}px`;
+        alert(`Mouse pos: x: ${e.clientX} y:${e.clientY}`);
+    });
+};
 function truncate(str, maxLength){
     if (str.length > maxLength) {
         return str.substr(0, maxLength - 1) + "…";
