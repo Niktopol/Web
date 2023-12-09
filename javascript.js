@@ -231,8 +231,7 @@ document.querySelector("#notifications button").addEventListener("click",functio
         counter.textContent = notifCount <= 99 ? notifCount : "99+";
     }, 1500);
 });
-window.addEventListener("scroll", function(event){
-    //(document.documentElement.clientHeight/2)/      + cards.offsetHeight/2)
+window.addEventListener("scroll", function(event){//SCROLL
     cards.querySelectorAll("& > .blcard").forEach(function(elem){
         elem.style.opacity = (window.scrollY + cards.offsetHeight/2)/(cards.getBoundingClientRect().y + window.scrollY);
     });
@@ -243,7 +242,7 @@ window.onload = function (){
     genPopularGoods();
     counter.textContent = notifCount;
     pageHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
-    notifs.addEventListener("click", function(event){
+    notifs.addEventListener("click", function(event){//NOTIFS
         if(event.target.parentNode.className == "notification" && event.target.tagName == "DIV"){
             notifs.removeChild(event.target.parentNode);
             notifCount -= 1;
@@ -252,7 +251,7 @@ window.onload = function (){
     });
     interval = setInterval(intervalNotif, 3000);
     let positioned = document.getElementById("positioned");
-    positioned.addEventListener("click", function(e){
+    positioned.addEventListener("click", function(e){//IMAGE
         positioned.firstElementChild.style.left = `${(positioned.clientWidth / 2) - (positioned.firstElementChild.offsetWidth / 2)}px`;
         positioned.firstElementChild.style.top = `${(positioned.clientHeight / 2) - (positioned.firstElementChild.offsetHeight / 2)}px`;
         alert(`Mouse pos: x: ${e.clientX} y:${e.clientY}`);
