@@ -24,7 +24,6 @@ header{
     height: var(--nav-height);
     display: flex;
     background-color: black;
-    z-index: 10;
 }
 nav{
     display: grid;
@@ -233,175 +232,26 @@ nav{
         flex-basis: 100%;
     }
 }
-.dragged{
-    display: block;
-    height: 350px;
-    width: 250px;
-    padding: 15px;
+main{
+    height: calc(100vh - var(--nav-height));
     display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 45% 12% 10% auto;
-    row-gap: 1%;
-    box-shadow: 0 0 15px #00000026;
-    border-radius: 20px;
+    grid-template-columns: 90%;
+    grid-template-rows: 70% 20%;
+    justify-content: center;
+    align-content: center;
+    row-gap: 10px;
     & > img{
         height: 100%;
-        justify-self: center;
-        border-radius: 20px;
+        width: 100%;
+        object-fit: contain;
     }
-    & > h2{
-        border-top: 3px solid orange;
-    }
-    & > span{
-        font-size: 20px;
-        font-weight: bold;
-        border-top: 3px solid orange;
-    }
-    & > p{
-        font-size: 16px;
-    }
-}
-main{
-    min-height: calc(100vh - var(--nav-height));
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    row-gap: 20px;
-    padding: 20px 0;
-    & > h1{
-        width: 90%;
-        align-self: center;
-    }
-    & > #contents{
-        min-height: 350px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 10px 0;
-        border-bottom: 3px solid orange;
-        & > a{
-            display: block;
-            height: 350px;
-            width: 250px;
-            padding: 15px;
-            display: grid;
-            grid-template-columns: 100%;
-            grid-template-rows: 45% 12% 10% auto;
-            row-gap: 1%;
-            box-shadow: 0 0 15px #00000026;
-            border-radius: 20px;
-            & > img{
-                height: 100%;
-                justify-self: center;
-                border-radius: 20px;
-            }
-            & > h2{
-                border-top: 3px solid orange;
-            }
-            & > span{
-                font-size: 20px;
-                font-weight: bold;
-                border-top: 3px solid orange;
-            }
-            & > p{
-                font-size: 16px;
-            }
-        }
-    }
-    & > #recommended{
+    & > div:last-child{
         display: flex;
         flex-direction: row;
-        align-self: center;
         column-gap: 10px;
-        width: 90%;
-        padding: 10px;
-        overflow-y: scroll;
-        & > div{
-            display: block;
-            height: 350px;
-            width: 250px;
-            padding: 15px;
-            display: grid;
-            grid-template-columns: 100%;
-            grid-template-rows: 45% 12% 10% auto;
-            row-gap: 1%;
-            box-shadow: 0 0 15px #00000026;
-            border-radius: 20px;
-            & > img{
-                height: 100%;
-                justify-self: center;
-                border-radius: 20px;
-            }
-            & > h2{
-                border-top: 3px solid orange;
-            }
-            & > span{
-                font-size: 20px;
-                font-weight: bold;
-                border-top: 3px solid orange;
-            }
-            & > p{
-                font-size: 16px;
-            }
-        }
-    }
-    & > #info{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        min-height: 300px;
-        padding: 0 5%;
-        gap: 20px;
-        border-top: 3px solid orange;
-        & > h1{
-            flex-basis: 100%;
-            border-bottom: 3px solid orange;
-        }
-        & > ul{
-            user-select: none;
-            list-style: none;
-            & > li{
-                cursor: pointer;
-                font-size: 20px;
-                font-weight: bold;
-                margin: 0.5em 0;
-                border-top: 3px solid orange;
-                border-bottom: 3px solid orange;
-            }
-            & > .selected{
-                color: #ffffff;
-                background-color: orange;
-                transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-            }
-        }
-        & > div{
-            display: flex;
-            flex-direction: column;
-            & > #scroller{
-                position: relative;
-                width: 275px;
-                height: 30px;
-                &::after{
-                    content: "";
-                    position: absolute;
-                    top: 15%;
-                    display: block;
-                    height: 70%;
-                    width: 100%;
-                    background-color: #00000011;
-                }
-                & > span{
-                    position: absolute;
-                    display: block;
-                    cursor: pointer;
-                    left: -5px;
-                    height: 100%;
-                    width: 10px;
-                    background-color: orange;
-                    z-index: 1;
-                }
-            }
+        overflow-x: scroll;
+        & > img{
+            height: 100%;
         }
     }
 }

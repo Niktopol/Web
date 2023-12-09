@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Корзина</title>
+        <title>Товар</title>
         <link rel="icon" type="image/svg+xml" href = "logo.svg">
-        <link rel="stylesheet" href = "cart.css">
+        <link rel="stylesheet" href = "gallery.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
@@ -68,76 +68,18 @@
             </nav>
         </header>
         <main>
-            <h1>Корзина:</h1>
-            <div id="contents">
-            </div>
-            <h1>Рекомендуемое:</h1>
-            <div id="recommended">
-                <div>
-                    <img>
-                    <h2></h2>
-                    <span></span>
-                    <p></p>
-                </div>
-                <div>
-                    <img>
-                    <h2></h2>
-                    <span></span>
-                    <p></p>
-                </div>
-                <div>
-                    <img>
-                    <h2></h2>
-                    <span></span>
-                    <p></p>
-                </div>
-                <div>
-                    <img>
-                    <h2></h2>
-                    <span></span>
-                    <p></p>
-                </div>
-                <div>
-                    <img>
-                    <h2></h2>
-                    <span></span>
-                    <p></p>
-                </div>
-                <div>
-                    <img>
-                    <h2></h2>
-                    <span></span>
-                    <p></p>
-                </div>
-                <div>
-                    <img>
-                    <h2></h2>
-                    <span></span>
-                    <p></p>
-                </div>
-                <div>
-                    <img>
-                    <h2></h2>
-                    <span></span>
-                    <p></p>
-                </div>
-            </div>
-            <div id="info">
-                <h1>Итого: 0₽</h1>
-                <ul>
-                    <h2>Выберите категории:</h2>
-                    <li>Кресла</li>
-                    <li>Диваны</li>
-                    <li>Кровати и матрасы</li>
-                    <li>Стулья</li>
-                    <li>Мягкие игрушки</li>
-                </ul>
-                <div>
-                    <h2>Цена: 0 ₽</h2>
-                    <div id="scroller">
-                        <span></span>
-                    </div>
-                </div>
+            <img src="images/gall2.jpg">
+            <div>
+                <img src="images/gall2.jpg">
+                <img src="images/gall3.jpg">
+                <img src="images/gall4.jpg">
+                <img src="images/gall5.jpg">
+                <img src="images/gall6.jpg">
+                <img src="images/gall7.jpg">
+                <img src="images/gall8.jpg">
+                <img src="images/gall9.jpg">
+                <img src="images/gall10.jpg">
+                <img src="images/gall11.jpg">
             </div>
         </main>
         <footer>
@@ -164,6 +106,12 @@
                 <a href="mailto:sendemail@gmail.com">По e-mail: sendemail@gmail.com</a>
             </address>
         </footer>
-        <script src="cart.js"></script>
+        <script>
+            document.querySelector("main > div").addEventListener("click", function(e){
+                if(e.target.tagName === "IMG"){
+                    document.querySelector("main > img").setAttribute("src", e.target.getAttribute("src"));
+                }
+            });
+        </script>
     </body>
     </html>
